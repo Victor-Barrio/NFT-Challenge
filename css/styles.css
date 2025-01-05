@@ -1,0 +1,196 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+  /* Colors */
+  /* Primary Colors */
+  --primary-color-soft-blue: hsl(215, 51%, 70%);
+  --primary-color-cyan: hsl(178, 100%, 50%);
+  /* Neutral Colors */
+  --neutral-color-very-dark-blueBg: hsl(217, 54%, 11%);
+  --neutral-color-very-dark-blue-cardBg: hsl(216, 50%, 16%);
+  --neutral-color-very-dark-blue-line: hsl(215, 32%, 27%);
+  --neutral-color-white: hsl(0, 0%, 100%);
+
+  /* Typography */
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--primary-color-soft-blue);
+
+  /* Layout */
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--neutral-color-very-dark-blueBg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Styles */
+.card {
+  width: 326px;
+  height: 543px;
+  background-color: var(--neutral-color-very-dark-blue-cardBg);
+  border-radius: 10px;
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Image Styles and Interaction */
+.card__image {
+  position: relative;
+}
+
+.card__image--view {
+  width: 279px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card__image--active {
+  width: 100%;
+  height: 99%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.card__image--active:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card__image--active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  opacity: 0.4;
+  background-color: var(--primary-color-cyan);
+  z-index: 1;
+}
+
+.card__image--icon {
+  width: 50px;
+  height: auto;
+  z-index: 2;
+}
+
+/* Card Title and Description Styles */
+.card__title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--neutral-color-white);
+}
+
+.card__title:hover {
+  cursor: pointer;
+  color: var(--primary-color-cyan);
+}
+
+.card__description {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Card Details Styles anf Interaction */
+.card__details {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--neutral-color-very-dark-blue-line);
+}
+
+.card__details div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card__price-icon {
+  width: 11px;
+  height: auto;
+}
+
+.card__price-value {
+  font-weight: 600;
+  color: var(--primary-color-cyan);
+  font-size: 14px;
+}
+
+.card__time-value {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* Card Creator Styles */
+.card__creator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.card__creator-image {
+  width: 30px;
+  height: auto;
+  border-radius: 50%;
+  border: 1px solid var(--neutral-color-white);
+}
+
+.card__creator-name {
+  color: var(--neutral-color-white);
+}
+
+.card__creator-name:hover {
+  cursor: pointer;
+  color: var(--primary-color-cyan);
+}
+
+/* Media Queries for the Desktop View */
+@media screen and (min-width: 1024px) {
+  /* Card Styles */
+  .card {
+    width: 346px;
+    height: 595px;
+    gap: 20px;
+  }
+
+  /* Card Image Styles and Interaction */
+  .card__image--view {
+    width: 300px;
+  }
+
+  /* Card Title and Description Styles */
+  .card__description {
+    font-size: 18px;
+  }
+
+  /* Card Details Styles anf Interaction */
+  .card__details {
+    padding-bottom: 18px;
+  }
+  .card__price-value {
+    font-size: 16px;
+  }
+
+  .card__time-value {
+    font-size: 16px;
+  }
+}
